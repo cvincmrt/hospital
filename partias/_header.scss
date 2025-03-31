@@ -1,0 +1,88 @@
+header{
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+    @include gradientBg;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__logo{
+        display: inline-block;
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        line-height: 5rem;
+        color: $white-color;
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    &__link{
+        display: inline-block;
+        font-weight: 400;
+        font-size: 0.9rem;
+        color: $white-color;
+    }
+
+    /* For all small devices*/
+    &__open-btn,
+    &__close-btn{
+        display: none;
+    }
+}
+
+/* MEDIA QUERIES MEDIUM */
+
+@media screen and (max-width: 1024px){
+    .container{
+        width: $container-md;
+    }
+    .nav{
+        &__open-btn{
+            display: inline-block;
+            font-size: 2rem;
+            background: transparent;
+            color: $white-color;
+            border: none;
+            cursor: pointer;
+        }
+
+        &__list{
+            position: fixed;
+            top: 5rem;
+            right: 5%;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            display: none;
+        }
+
+        &__item{
+            width: 100%;
+        }
+
+        &__link{
+           display: block;
+           padding: 1rem 2rem;
+           background: linear-gradient($primary-color-variant, darken($primary-color-variant, 12%));
+           border-radius: 0;
+
+           &.btn{
+            background: $secondary-color;
+           }
+        }
+
+        
+    }
+  
+        
+}
